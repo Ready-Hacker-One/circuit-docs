@@ -21,7 +21,7 @@ yarn fix:estlint
 yarn fix # Run all with autofixing
 ```
 
-# Testing
+## Testing
 
 ```
 yarn test:unit:watch
