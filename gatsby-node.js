@@ -1,7 +1,36 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+exports.onCreateNode = ({node, boundActionCreators, getNode}) => {
+  if (node.internal.type === "MarkdownRemark") {
+    if (node.frontmatter && node.frontmatter.title)
+      return console.log('mdcontent: ', node);
 
- // You can delete this file if you're not using it
+    console.log('node: ', node);
+  }
+};
+
+exports.createPages = ({graphql, boundActionCreators}) => {
+  return new Promise((resolve, reject) => {
+    resolve(
+      graphql(
+        `
+        {
+          allComponentProp {
+            edges {
+              node {
+                id
+              }
+            }
+          }
+        }
+      `
+      ).then(result => {
+        console.log(result);
+
+        if (result.errors) {
+          /* eslint no-console: "off"*/
+          console.log(result.errors);
+          reject(result.errors);
+        }
+      })
+    );
+  });
+};
