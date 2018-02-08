@@ -1,0 +1,2 @@
+webpackJsonp([0xe59cb0b85460],{540:function(e,t){e.exports={data:{componentMetadata:{edges:[{node:{displayName:"Switch",description:{text:"A simple Switch component."},props:[{name:"on",type:{value:null,raw:null},required:!1},{name:"onToggle",type:{value:null,raw:null},required:!1}]}}]}},pathContext:{id:"/Users/connor/Developer/GitHub/circuit-docs/node_modules/circuit-ui/src/components/Toggle/components/Switch/Switch.js absPath of file--Switch--ComponentMetadata",name:"Switch"}}}});
+//# sourceMappingURL=path---components-switch-5ff446d7ccb04f9b8a11.js.map

@@ -1,0 +1,2 @@
+webpackJsonp([47244612631788],{404:function(e,a){e.exports={data:{componentsMetadata:{edges:[{node:{displayName:"CardHeader",description:null,props:[{name:"children",type:{value:{name:"element"},raw:null},required:!0},{name:"onClose",type:{value:null,raw:null},required:!1}]}}]}},pathContext:{id:"/Users/connor/Developer/GitHub/circuit-docs/node_modules/circuit-ui/src/components/Card/components/Header/Header.js absPath of file--CardHeader--ComponentMetadata",name:"CardHeader"}}}});
+//# sourceMappingURL=path---components-card-header-5dad627907fa37c15dce.js.map

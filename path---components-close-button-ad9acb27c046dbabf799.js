@@ -1,0 +1,2 @@
+webpackJsonp([0xa68857afcbe1],{406:function(e,t){e.exports={data:{componentsMetadata:{edges:[{node:{displayName:"CloseButton",description:{text:"A generic close button."},props:[{name:"selector",type:{value:null,raw:null},required:!0}]}}]}},pathContext:{id:"/Users/connor/Developer/GitHub/circuit-docs/node_modules/circuit-ui/src/components/CloseButton/CloseButton.js absPath of file--CloseButton--ComponentMetadata",name:"CloseButton"}}}});
+//# sourceMappingURL=path---components-close-button-ad9acb27c046dbabf799.js.map
