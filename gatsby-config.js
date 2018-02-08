@@ -1,6 +1,7 @@
 module.exports = {
+  pathPrefix: `/circuit-docs`,
   siteMetadata: {
-    title: 'Gatsby Default Starter'
+    title: 'Circuit UI — Documentation'
   },
   plugins: [
     'gatsby-plugin-react-next',
@@ -9,9 +10,9 @@ module.exports = {
     //  Configurations for loading markdown data from
     //  content folder
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "markdown",
+        name: 'markdown',
         path: `${__dirname}/content`
       }
     },
@@ -23,8 +24,8 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'components',
-        path: `${__dirname}/node_modules/circuit-ui/src/components`,
-      },
-    },
-  ],
+        path: `${__dirname}/node_modules/circuit-ui/src/components`
+      }
+    }
+  ]
 };
