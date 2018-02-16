@@ -1,5 +1,15 @@
-exports.onCreateNode = ({node, boundActionCreators, getNode}) => {
-  if (node.internal.type === "MarkdownRemark") {
+const path = require('path');
+
+exports.modifyWebpackConfig = ({ config, stage }, options) => {
+  config.loader('js', current => {
+    current.exclude = [/node_modules(?!\/circuit-ui)/];
+    return current;
+  });
+  return config;
+};
+
+exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
+  if (node.internal.type === 'MarkdownRemark') {
     if (node.frontmatter && node.frontmatter.title)
       return console.log('mdcontent: ', node);
 
@@ -7,30 +17,43 @@ exports.onCreateNode = ({node, boundActionCreators, getNode}) => {
   }
 };
 
-exports.createPages = ({graphql, boundActionCreators}) => {
-  return new Promise((resolve, reject) => {
-    resolve(
-      graphql(
-        `
-        {
-          allComponentProp {
-            edges {
-              node {
-                id
-              }
+exports.createPages = ({ graphql, boundActionCreators }) => {
+  const { createPage } = boundActionCreators;
+
+  const componentPage = path.resolve('src/pages/component.js');
+  graphql(
+    `
+      {
+        allComponentMetadata {
+          edges {
+            node {
+              id
+              displayName
             }
           }
         }
-      `
-      ).then(result => {
-        console.log(result);
+      }
+    `
+  ).then(({ data, errors }) => {
+    if (errors) {
+      console.error(errors); // eslint-disable-line no-console
+    }
 
-        if (result.errors) {
-          /* eslint no-console: "off"*/
-          console.log(result.errors);
-          reject(result.errors);
-        }
-      })
-    );
+    const { allComponentMetadata } = data;
+    const componentsNames = allComponentMetadata.edges.map(c => ({
+      id: c.node.id,
+      name: c.node.displayName
+    }));
+
+    componentsNames.forEach(({ name, id }) => {
+      if (!name || !id) {
+        console.log(name, id);
+      }
+      createPage({
+        path: `components/${name}`,
+        component: componentPage,
+        context: { id, name }
+      });
+    });
   });
 };

@@ -31,6 +31,7 @@ module.exports = {
     ]
   },
   globals: {
+    graphql: true,
     describe: true,
     beforeEach: true,
     inject: true,

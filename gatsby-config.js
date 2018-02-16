@@ -1,14 +1,14 @@
 module.exports = {
   pathPrefix: `/circuit-docs`,
   siteMetadata: {
-    title: 'Circuit UI — Documentation'
+    title: 'Circuit UI — Documentation',
+    description: "Documentation for Circuit UI, SumUp's design system library"
   },
   plugins: [
     'gatsby-plugin-react-next',
     'gatsby-plugin-react-helmet',
 
-    //  Configurations for loading markdown data from
-    //  content folder
+    // Configuration for loading markdown data from content folder
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -17,8 +17,8 @@ module.exports = {
       }
     },
 
-    // Configuration to loading component metadata from Circuit-ui
-    // library.
+    // Configuration for loading component metadata from Circuit UI library.
+    'gatsby-transformer-documentationjs',
     'gatsby-transformer-react-docgen',
     {
       resolve: 'gatsby-source-filesystem',

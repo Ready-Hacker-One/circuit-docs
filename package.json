@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "",
   "dependencies": {
-    "circuit-ui": "git+https://github.com/sumup/circuit-ui.git",
+    "circuit-ui": "https://github.com/sumup/circuit-ui",
     "emotion": "^9.0.0",
     "emotion-theming": "^9.0.0",
     "gatsby": "^1.9.158",
@@ -12,8 +12,10 @@
     "gatsby-plugin-react-helmet": "^2.0.3",
     "gatsby-plugin-react-next": "^1.0.8",
     "gatsby-source-filesystem": "^1.5.18",
+    "gatsby-transformer-documentationjs": "^1.4.8",
     "gatsby-transformer-react-docgen": "^1.0.12",
     "gatsby-transformer-remark": "^1.7.30",
+    "prismjs": "^1.11.0",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-helmet": "^5.2.0"
