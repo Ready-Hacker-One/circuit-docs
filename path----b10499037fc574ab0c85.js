@@ -1,2 +1,2 @@
-webpackJsonp([60335399758886],{256:function(t,i){t.exports={data:{site:{siteMetadata:{title:"Circuit UI — Documentation",description:"Documentation for Circuit UI, SumUp's design system library"}}},layoutContext:{}}}});
+webpackJsonp([60335399758886],{261:function(t,i){t.exports={data:{site:{siteMetadata:{title:"Circuit UI — Documentation",description:"Documentation for Circuit UI, SumUp's design system library"}}},layoutContext:{}}}});
 //# sourceMappingURL=path----b10499037fc574ab0c85.js.map
