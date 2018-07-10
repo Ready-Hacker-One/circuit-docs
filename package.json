@@ -5,6 +5,7 @@
   "author": "Dustin Schau <dustinschau@gmail.com> (https://dustinschau.com)",
   "repository": "https://github.com/dschau/gatsby-blog-starter-kit",
   "dependencies": {
+    "@sumup/circuit-ui": "^0.0.11",
     "gatsby": "~1.9.45",
     "gatsby-link": "~1.6.17",
     "gatsby-plugin-catch-links": "~1.0.1",

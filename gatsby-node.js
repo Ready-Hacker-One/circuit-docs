@@ -1,5 +1,22 @@
 const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
+const generateBabelConfig = require(`gatsby/dist/utils/babel-config`);
+
+exports.modifyWebpackConfig = ({ config, stage }) => {
+  const program = {
+    directory: __dirname,
+    browserslist: ["> 1%", "last 2 versions", "IE >= 9"],
+  };
+
+  return generateBabelConfig(program, stage).then(babelConfig => {
+    config.removeLoader("js").loader("js", {
+      test: /\.js$/,
+      loader: 'babel-loader',
+      exclude: /node_modules\/(?!(@sumup\/circuit-ui)\/).*/,
+      query: babelConfig,
+    });
+  });
+};
 
 exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
   const { createNodeField } = boundActionCreators
